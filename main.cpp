@@ -17,8 +17,7 @@ tree* insert(tree *root, int data)
     }
     else if(data > root->data)
     {
-        root->r = insert(root->r, data);//The need to write in this fn bcoz NULL= 0 and not valid locations, they need to be
-                                        //assigned or replaced.
+        root->r = insert(root->r, data);
     }
     else
     {
@@ -27,7 +26,7 @@ tree* insert(tree *root, int data)
     return root;
 }
 
-void display(tree *root)//Inorder(LDR), Preorder(DLR), Postorde(LRD)
+void display(tree *root)//Inorder(LDR)
 {
     if(root != NULL)//Inorder
     {
@@ -46,17 +45,16 @@ int main() {
         std::cout<<"1.Insert\n2.Display\n3.Exit";
         std::cin>>ch;
         switch(ch) {
-            case 1: std::cout<<"Enter data\n";
-                    std::cin>>data;
-                    std::cout<<"\n";
-                root = insert(root,data);
-                break;
-            case 2: display(root);
-                    std::cout<<"\n";
-                break;
-            case 3: exit(0);
+           		 case 1: std::cout<<"Enter data\n";
+                   	 std::cin>>data;
+                   	 std::cout<<"\n";
+              	         root = insert(root,data);
+                	 break;
+            		 case 2: display(root);
+                    	 std::cout<<"\n";
+               	         break;
+            		 case 3: exit(0);
+        	    }
         }
-        }
-    std::cout << "Hello, World!" << std::endl;
     return 0;
 }
